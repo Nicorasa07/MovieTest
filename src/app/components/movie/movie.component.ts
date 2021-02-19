@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { OmdbService } from 'src/app/services/omdb.service';
+import { OmdbService, Movie } from 'src/app/services/omdb.service';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { OmdbService } from 'src/app/services/omdb.service';
 })
 export class MovieComponent implements OnInit {
 
-  movie:object = {};
+  movie:Movie;
   loading:boolean = true;
   addFavorite:boolean = false;
 

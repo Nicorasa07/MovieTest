@@ -14,7 +14,7 @@ export class OmdbService {
 
 
   constructor(private _http: HttpClient) {
-    this.urlApi = `${environment.urlApi}?apikey=${environment.apiKey}`
+    this.urlApi = `${environment.urlApi}?apikey=${environment.apiKey}`;
   }
 
   getMovies(movie:string):Observable<any> {
@@ -35,4 +35,4 @@ export interface Movie{
   Writer:string,
   Actors:string,
   Genre:string
-}
+};
