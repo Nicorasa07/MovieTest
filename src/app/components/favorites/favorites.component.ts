@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OmdbService } from 'src/app/services/omdb.service';
+import { OmdbService, Movie } from 'src/app/services/omdb.service';
 
 @Component({
   selector: 'app-favorites',
@@ -9,25 +9,25 @@ import { OmdbService } from 'src/app/services/omdb.service';
 export class FavoritesComponent implements OnInit {
 
   favorites:string[] = [];
-  movies:any = [];
+  movies:Movie[] = [];
 
   constructor(private _omdbService: OmdbService) {
-    this.favorites = JSON.parse(localStorage.getItem('favorites'))
+    this.favorites = JSON.parse(localStorage.getItem('favorites'));
     if (this.favorites !== null) {
       this.favorites.forEach(movie => {
         this.viewMovie(movie);
-      })
-    }
-  }
+      });
+    };
+  };
 
-  viewMovie(id:string) {
+  viewMovie(id:string):void {
     this._omdbService.getMovie(id)
     .subscribe(data => {
       this.movies.push(data);
-    })
-  }
+    });
+  };
 
-  ngOnInit(): void {
+  ngOnInit():void {
   }
 
 }

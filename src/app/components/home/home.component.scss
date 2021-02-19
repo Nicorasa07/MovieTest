@@ -84,10 +84,14 @@
     }
   }
   .movies-list {
+    margin: 50px 0 0 0;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    margin: 50px 0 0 0;
+  }
+  .movie-item {
+    flex-basis: 24%;
+    margin: 0 .5% 30px .5%;;
   }
 }
 
@@ -114,6 +118,10 @@
     }
     .movies-list {
       margin: 30px 0 0 0;
+    }
+    .movie-item {
+      flex-basis: 48%;
+      margin: 0 1% 15px 1%;
     }
   }
 }

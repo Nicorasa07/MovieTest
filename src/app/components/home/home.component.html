@@ -23,11 +23,10 @@
 
 <section class="movies">
   <ul class="filter">
-    <li [ngClass]="{'active': genre == ''}" (click)="filterMovies('')" class="filter-item">All</li>
-    <li [ngClass]="{'active': genre == 'Drama'}" (click)="filterMovies('Drama')" class="filter-item">New releases</li>
-    <li [ngClass]="{'active': genre == 'Adventure'}" (click)="filterMovies('Adventure')" class="filter-item">Most popular</li>
-    <li [ngClass]="{'active': genre == 'Sci-Fi'}" (click)="filterMovies('Sci-Fi')" class="filter-item">Trends</li>
-    <li [ngClass]="{'active': genre == 'Thriller'}" (click)="filterMovies('Thriller')" class="filter-item">Recomendations</li>
+    <li [ngClass]="{'active': genreActive === ''}" (click)="filterMovies('')" class="filter-item">All</li>
+    <li [ngClass]="{'active': genreActive === genre}" (click)="filterMovies(genre)" *ngFor="let genre of genres" class="filter-item">{{genre}}</li>
   </ul>
-  <app-movie-card class="movies-list" [movies]="moviesArr"></app-movie-card>
+  <div class="movies-list">
+    <app-movie-card class="movie-item animated fadeIn" [movie]="movie" *ngFor="let movie of moviesArr"></app-movie-card>
+  </div>
 </section>

@@ -10,46 +10,42 @@ import { OmdbService } from 'src/app/services/omdb.service';
 })
 export class MovieComponent implements OnInit {
 
+  movie:object = {};
   loading:boolean = true;
-  movie:any = {};
   addFavorite:boolean = false;
 
   constructor(private _activatedRoute: ActivatedRoute, private _omdbService: OmdbService) {
     this._activatedRoute.params.subscribe(params => {
       this.viewMovie(params['id']);
-    })
-  }
+    });
+  };
 
-  viewMovie(id:string) {
+  viewMovie(id:string):void {
     this._omdbService.getMovie(id)
     .subscribe(data => {
       this.movie = data;
       this.loading = false;
-    })
-  }
+    });
+  };
 
-  saveMovie(id:string) {
-
+  saveMovie(id:string):void {
     let favorites:string[];
-
     if (localStorage.getItem('favorites') === null) {
       favorites = [];
     } else {
-      favorites = JSON.parse(localStorage.getItem('favorites'))
+      favorites = JSON.parse(localStorage.getItem('favorites'));
     }
-
     const free = favorites.find(movie => movie === id);
     if (!free) favorites.push(id);
-
     localStorage.setItem('favorites', JSON.stringify(favorites));
     this.addFavorite = true;
-  }
-  
-  closeMessage() {
-    this.addFavorite = false;
-  }
+  };
 
-  ngOnInit(): void {
-  }
+  closeMessage():void {
+    this.addFavorite = false;
+  };
+
+  ngOnInit():void {
+  };
 
 }

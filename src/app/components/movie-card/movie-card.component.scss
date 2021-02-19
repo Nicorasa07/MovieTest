@@ -1,6 +1,4 @@
 .movie-item {
-  flex-basis: 24%;
-  margin: 0 .5% 30px .5%;
   position: relative;
   overflow: hidden;
   &:hover {
@@ -57,10 +55,6 @@
 }
 
 @media screen and (max-width: 575.98px) {
-  .movie-item {
-    flex-basis: 48%;
-    margin: 0 1% 15px 1%;
-  }
   .movie-info {
     padding: 30px 15px;
   }
