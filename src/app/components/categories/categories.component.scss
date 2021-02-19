@@ -46,3 +46,42 @@
     justify-content: center;
   }
 }
+
+@media screen and (max-width: 575.98px) {
+  .categories {
+    margin: 20px auto;
+  }
+  .movies {
+    margin: 20px 0 0 0;
+    flex-flow: row wrap;
+    .filter {
+      flex-basis: 100%;
+      height: auto;
+      border: none;
+      display: flex;
+      overflow: scroll;
+      margin: 0;
+      padding: 0;
+      // ::-webkit-scrollbar {
+      //   width: 0px;
+      //   display: none;
+      // }
+    }
+    .filter-item {
+      margin: 0 10px;
+      overflow: visible;
+      white-space: nowrap;
+      font-weight: 900;
+      &::before {
+        display: none;
+      }
+      &.active, &:hover {
+        border-bottom: 2px solid black;
+      }
+    }
+    .movies-list {
+      margin: 30px 0 0 0;
+      flex-basis: 100%;
+    }
+  }
+}

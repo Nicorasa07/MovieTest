@@ -61,3 +61,94 @@ body {
     left: -5px;
   }
 }
+
+@media screen and (max-width: 575.98px) {
+  .swiper-pagination {
+    text-align: center;
+    padding: 0;
+  }
+}
+
+@keyframes moveDown {
+  from {
+    top: 5%;
+    transform: translateY(0);
+  }
+  to {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes moveDownBackward {
+  from {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  to {
+    top: 5%;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveUp {
+  from {
+    top: 95%;
+    transform: translateY(0);
+  }
+  to {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes moveUpBackward {
+  from {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  to {
+    top: 95%;
+    transform: translateY(0);
+  }
+}
+
+@keyframes makeCross1 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(40deg);
+  }
+}
+
+@keyframes makeCross1Backward {
+  from {
+    top: 50%;
+    transform: rotate(40deg) translateY(-50%);
+  }
+  to {
+    top: 50%;
+    transform: rotate(0deg) translateY(-50%);
+  }
+}
+
+@keyframes makeCross2 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-40deg);
+  }
+}
+
+@keyframes makeCross2Backward {
+  from {
+    top: 50%;
+    transform: rotate(-40deg) translateY(-50%);
+  }
+  to {
+    top: 50%;
+    transform: rotate(0deg) translateY(-50%);
+  }
+}

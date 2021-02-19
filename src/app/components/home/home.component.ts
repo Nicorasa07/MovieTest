@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OmdbService } from 'src/app/services/omdb.service';
-import SwiperCore, {Pagination} from 'swiper/core';
-SwiperCore.use([Pagination]);
+import SwiperCore, {Pagination, Autoplay} from 'swiper/core';
+SwiperCore.use([Pagination, Autoplay]);
 
 @Component({
   selector: 'app-home',
