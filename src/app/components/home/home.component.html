@@ -1,0 +1,33 @@
+<section class="banner">
+  <swiper [pagination]="{ clickable: true }">
+    <ng-template swiperSlide>
+      <div class="banner-slide">
+        <img src="assets/img/bg/banner1.jpg" alt="" class="banner-img">
+        <div class="banner-content">
+          <span class="banner-text animated fadeIn">Programa tu fin de semana con <span class="bold">Movies</span></span> <br>
+          <span class="banner-text animated fadeIn">escoge tus peliculas favorítas</span>
+          </div>
+      </div>
+    </ng-template>
+    <ng-template swiperSlide>
+      <div class="banner-slide">
+        <img src="assets/img/bg/banner1.jpg" alt="" class="banner-img">
+        <div class="banner-content">
+          <span class="banner-text">Programa tu fin de semana con <span class="bold">Movies</span></span> <br>
+          <span class="banner-text">escoge tus peliculas favorítas</span>
+          </div>
+      </div>
+    </ng-template>
+  </swiper>
+</section>
+
+<section class="movies">
+  <ul class="filter">
+    <li [ngClass]="{'active': genre == ''}" (click)="filterMovies('')" class="filter-item">All</li>
+    <li [ngClass]="{'active': genre == 'Drama'}" (click)="filterMovies('Drama')" class="filter-item">New releases</li>
+    <li [ngClass]="{'active': genre == 'Adventure'}" (click)="filterMovies('Adventure')" class="filter-item">Most popular</li>
+    <li [ngClass]="{'active': genre == 'Sci-Fi'}" (click)="filterMovies('Sci-Fi')" class="filter-item">Trends</li>
+    <li [ngClass]="{'active': genre == 'Thriller'}" (click)="filterMovies('Thriller')" class="filter-item">Recomendations</li>
+  </ul>
+  <app-movie-card class="movies-list" [movies]="moviesArr"></app-movie-card>
+</section>

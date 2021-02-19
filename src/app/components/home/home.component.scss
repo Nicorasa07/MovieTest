@@ -1,0 +1,76 @@
+.banner {
+  height: 100%;
+  .banner-slide {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba($color: #000000, $alpha: 0.5);
+    }
+  }
+  .banner-img {
+    width: 100%;
+  }
+  .banner-content {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .banner-text {
+    background-color: #FFFFFF;
+    color: #000000;
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+    display: inline-block;
+  }
+  .bold {
+    font-weight: 900;
+  }
+}
+
+.movies {
+  width: 90%;
+  margin: 50px auto;
+  .filter {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex-flow: row nowrap;
+  }
+  .filter-item {
+    margin: 0 30px;
+    font-weight: 800;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    &::before {
+      transition: all .2s ease-in-out;
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: -100%;
+      height: 2px;
+      width: 100%;
+      background-color: #000000;
+    }
+    &.active, &:hover {
+      &::before {
+        left: 0;
+      }
+    }
+  }
+  .movies-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 50px 0 0 0;
+  }
+}

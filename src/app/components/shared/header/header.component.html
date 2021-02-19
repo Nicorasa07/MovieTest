@@ -1,0 +1,18 @@
+<header class="header">
+  <a [routerLink]="['/home']" class="header-link">
+    <img src="assets/img/misc/movie-logo.png" alt="Logo" class="logo-img"> <span class="logo-text">Movies</span>
+  </a>
+  <nav>
+    <input id="toggle" class="toggle" type="checkbox">
+    <label for="toggle">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </label>
+    <ul class="menu" id="menu">
+      <li class="menu-item" routerLinkActive="active"> <a class="menu-link" [routerLink]="['/home']">Home</a> </li>
+      <li class="menu-item" routerLinkActive="active"> <a class="menu-link" [routerLink]="['/categories']">Categories</a> </li>
+      <li class="menu-item" routerLinkActive="active"> <a class="menu-link" [routerLink]="['/favorites']">My Favorites</a> </li>
+    </ul>
+  </nav>
+</header>

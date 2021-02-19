@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+  background-color: #0B0A0A;
+  padding: 0 4rem;
+  color: #FFFFFF;
+  .logo-img {
+    display: inline-block;
+  }
+  .logo-text {
+    color: #FFBE40;
+    font-weight: 900;
+    font-size: 29px;
+    position: absolute;
+    margin: 10px 0 0 -1px;
+  }
+  .menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .menu-item {
+    margin: 0 25px;
+    transition: all .2s ease-in-out;
+    &.active, &:hover {
+      color:#FFBE40;
+    }
+  }
+  .menu-link {
+    font-size: 20px;
+    font-weight: 800;
+  }
+  input, label {
+    display: none;
+  }
+}

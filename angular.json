@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "movie-test"
+  "defaultProject": "movie-test",
+  "cli": {
+    "analytics": false
+  }
 }

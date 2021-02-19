@@ -1,0 +1,81 @@
+.movie {
+  padding: 60px 15%;
+  background: linear-gradient(180deg, #FFBE40 16.72%, rgba(255, 229, 102, 0) 100%);
+  min-height: 80vh;
+  .loading {
+    text-align: center;
+  }
+  .movie-content {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .movie-poster {
+    flex-basis: 40%;
+  }
+  .movie-img {
+    margin: 0 auto;
+    height: 75vh;
+    object-fit: cover;
+  }
+  .movie-info {
+    flex-basis: 60%;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .movie-title {
+    font-size: 36px;
+  }
+  .movie-year {
+    font-size: 20px;
+    opacity: .6;
+  }
+  .movie-description {
+    font-size: 22px;
+    margin: 30px 0;
+  }
+  .movie-details {
+    font-size: 22px;
+  }
+  .movie-button {
+    margin: 30px 0 0 0;
+    float: right;
+    width: auto;
+    align-self: flex-end;
+    font-weight: 700;
+    color: #FFFFFF;
+    border: 1px solid #4D6666;
+    background-color: #4D6666;
+    cursor: pointer;
+    padding: 7px 10px;
+  }
+}
+.message {
+  background-color: rgba($color: #000000, $alpha: .8);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .message-content {
+    background-color: #FFFFFF;
+    width: 30%;
+    padding: 30px;
+    position: relative;
+  }
+  .message-text {
+    font-size: 20px;
+  }
+  .message-close {
+    background: transparent;
+    border: none;
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    cursor: pointer;
+  }
+}

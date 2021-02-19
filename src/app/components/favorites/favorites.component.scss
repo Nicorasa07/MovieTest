@@ -1,0 +1,14 @@
+.favorites {
+  width: 90%;
+  margin: 40px auto;
+  .favorites-title {
+    text-align: center;
+    font-size: 40px;
+  }
+  .movies-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 50px 0 0 0;
+  }
+}
