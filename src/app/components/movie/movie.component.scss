@@ -79,3 +79,39 @@
     cursor: pointer;
   }
 }
+
+@media screen and (max-width: 575.98px) {
+  .movie {
+    padding: 50px 5%;
+    .movie-poster {
+      flex-basis: 100%;
+    }
+    .movie-img {
+      width: 80%;
+      margin: 0 auto;
+      height: auto;
+    }
+    .movie-info {
+      flex-basis: 100%;
+      padding: 0;
+      margin: 40px 0 0 0;
+    }
+    .movie-title {
+      text-align: center;
+      font-size: 24px;
+    }
+    .movie-year {
+      font-size: 18px;
+    }
+    .movie-description {
+      font-size: 16px;
+      margin: 15px 0;
+    }
+    .movie-details {
+      font-size: 16px;
+    }
+    .movie-button {
+      align-self: center;
+    }
+  }
+}
