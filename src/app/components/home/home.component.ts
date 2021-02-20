@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { OmdbService, Movie } from 'src/app/services/omdb.service';
+import { OmdbService } from 'src/app/services/omdb.service';
+import { Movie } from 'src/app/models/movie.model';
 import SwiperCore, {Pagination, Autoplay} from 'swiper/core';
 SwiperCore.use([Pagination, Autoplay]);
 
@@ -11,17 +12,34 @@ SwiperCore.use([Pagination, Autoplay]);
 
 export class HomeComponent implements OnInit {
 
+  moviesList:string[] = [];
   movies:Movie[] = [];
   moviesArr:Movie[] = [];
+
   genreActive:string = '';
-  genres:string[] = ['Drama', 'Adventure', 'Sci-Fi', 'Thriller'];
+  genres:string[] = [];
 
   constructor(private _omdbService: OmdbService) {
-    this._omdbService.moviesList.forEach(movie => {
-      this._omdbService.getMovies(movie)
-      .subscribe(data => {
-        this.movies.push(data);
-      })
+  };
+
+  ngOnInit():void {
+    this.getGenres();
+    this.getMovies();
+  };
+
+  getGenres():void {
+    this.genres = this._omdbService.getGenres();
+  };
+
+  getMovies():void {
+    this.moviesList = this._omdbService.getMovies();
+    this.getMovieService();
+  };
+
+  getMovieService():void {
+    this.moviesList.forEach(movie => {
+      this._omdbService.getInfoMovie(movie)
+      .subscribe(data => this.movies.push(data));
     });
     this.moviesArr = this.movies;
   };
@@ -30,9 +48,5 @@ export class HomeComponent implements OnInit {
     const moviesCopy = this.movies.filter(movie => movie.Genre.indexOf(genre) >= 0);
     this.moviesArr = moviesCopy;
     this.genreActive = genre;
-  }
-
-  ngOnInit():void {
-  }
-
+  };
 }

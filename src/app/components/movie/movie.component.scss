@@ -114,4 +114,13 @@
       align-self: center;
     }
   }
+  .message {
+    .message-content {
+      width: 90%;
+      padding: 15px;
+    }
+    .message-text {
+      font-size: 18px;
+    }
+  }
 }

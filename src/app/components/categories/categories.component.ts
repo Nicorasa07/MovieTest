@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { OmdbService, Movie } from 'src/app/services/omdb.service';
+import { OmdbService } from 'src/app/services/omdb.service';
+import { Movie } from 'src/app/models/movie.model';
+
 
 @Component({
   selector: 'app-categories',
@@ -9,14 +11,33 @@ import { OmdbService, Movie } from 'src/app/services/omdb.service';
 
 export class CategoriesComponent implements OnInit {
 
+  moviesList:string[] = [];
   movies:Movie[] = [];
   moviesArr:Movie[] = [];
+
   genreActive:string = '';
-  genres:string[] = ['Drama', 'Adventure', 'Sci-Fi', 'Thriller', 'Action'];
+  genres:string[] = [];
 
   constructor(private _omdbService: OmdbService) {
-    this._omdbService.moviesList.forEach(movie => {
-      this._omdbService.getMovies(movie)
+  };
+
+  ngOnInit():void {
+    this.getGenres();
+    this.getMovies();
+  };
+
+  getGenres():void {
+    this.genres = this._omdbService.getGenres();
+  };
+
+  getMovies():void {
+    this.moviesList = this._omdbService.getMovies();
+    this.getMovieService();
+  };
+
+  getMovieService():void {
+    this.moviesList.forEach(movie => {
+      this._omdbService.getInfoMovie(movie)
       .subscribe(data => this.movies.push(data));
     });
     this.moviesArr = this.movies;
@@ -27,8 +48,4 @@ export class CategoriesComponent implements OnInit {
     this.moviesArr = moviesCopy;
     this.genreActive = genre;
   };
-
-  ngOnInit():void {
-  };
-
 }

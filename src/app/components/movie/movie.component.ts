@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { OmdbService, Movie } from 'src/app/services/omdb.service';
+import { OmdbService } from 'src/app/services/omdb.service';
+import { Movie } from 'src/app/models/movie.model';
+
 
 
 @Component({
@@ -10,18 +12,23 @@ import { OmdbService, Movie } from 'src/app/services/omdb.service';
 })
 export class MovieComponent implements OnInit {
 
+  idMovie:string;
   movie:Movie;
   loading:boolean = true;
   addFavorite:boolean = false;
 
   constructor(private _activatedRoute: ActivatedRoute, private _omdbService: OmdbService) {
     this._activatedRoute.params.subscribe(params => {
-      this.viewMovie(params['id']);
+      this.idMovie = params['id'];
     });
   };
 
-  viewMovie(id:string):void {
-    this._omdbService.getMovie(id)
+  ngOnInit():void {
+    this.getMovieService();
+  };
+
+  getMovieService():void {
+    this._omdbService.getInfoMovie(this.idMovie)
     .subscribe(data => {
       this.movie = data;
       this.loading = false;
@@ -43,9 +50,6 @@ export class MovieComponent implements OnInit {
 
   closeMessage():void {
     this.addFavorite = false;
-  };
-
-  ngOnInit():void {
   };
 
 }
